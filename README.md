@@ -86,6 +86,18 @@ We first use **K-Means** to find natural clusters based on geography, then apply
 
 ---
 
+## 🧠 How it Works
+
+1.  **Feature Engineering**: Uses the Haversine formula to calculate real-world distances on the Earth's surface.
+2.  **Machine Learning**: Runs a search for the optimal number of clusters ($k$) using **Silhouette Scores**.
+3.  **Constraint Optimization**: Uses **PuLP** to solve a Mixed-Integer Program where:
+    * **Objective**: Minimize total distance.
+    * **Constraint**: Total `Demand` in a cluster $\leq$ `Vehicle Capacity`.
+    * **Constraint**: Every point must be assigned to exactly one cluster.
+
+
+---
+
 ## 📁 Project Structure
 
 ```
