@@ -63,6 +63,29 @@ Solved using **PuLP (Linear Programming)**
 
 ---
 
+## 📊 Visual Insights
+
+### 1. Delivery & Demand Overview
+Before optimization, we analyze the spatial distribution and the "weight" (demand) of each delivery point.
+| Delivery Locations | Demand Distribution |
+|---|---|
+| ![Locations](outputs/figures/01_delivery_locations.png) | ![Demand](outputs/figures/02_demand_histogram.png) |
+
+### 2. Distance to Depot
+We engineer features to understand the proximity of each delivery point to the central warehouse.
+![Distance to Depot](outputs/figures/04_distance_to_depot.png)
+
+### 3. Clustering Results (ML vs. Optimization)
+We first use **K-Means** to find natural clusters based on geography, then apply **MIP** to "fix" clusters so they never exceed vehicle capacity.
+
+**Initial K-Means Clusters:**
+![K-Means](outputs/figures/06_kmeans_clusters.png)
+
+**Final Optimized & Balanced Clusters:**
+![MIP Optimization](outputs/figures/07_optimized_clusters.png)
+
+---
+
 ## 📁 Project Structure
 
 ```
