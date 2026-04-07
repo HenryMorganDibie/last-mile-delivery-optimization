@@ -4,6 +4,7 @@ Centralized configuration for the neighbourhood clustering pipeline.
 """
 
 from pathlib import Path
+import os
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,7 +13,7 @@ OUTPUTS_DIR = BASE_DIR / "outputs"
 FIGURES_DIR = OUTPUTS_DIR / "figures"
 MAPS_DIR = OUTPUTS_DIR / "maps"
 
-RAW_DATA_FILE = DATA_DIR / "OR_sample_data.csv"
+RAW_DATA_FILE = os.path.join(DATA_DIR, "processed", "OR_sample_data.csv")
 
 # ── Expected schema ────────────────────────────────────────────────────────
 REQUIRED_COLUMNS = [
